@@ -1,0 +1,235 @@
+#N canvas 41 23 1237 537 10;
+#X obj 163 273 bng 15 250 50 0 defaults defaults_rcv defaults 17 7
+0 10 -262144 -1 -1;
+#N canvas 489 43 916 835 settings 0;
+#X obj 73 23 loadbang;
+#X obj 52 276 r reset_pitch_\$0;
+#X obj 50 319 s grain_pitch_rcv_\$0;
+#X obj 766 80 i \$0;
+#X obj 651 61 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 267 130 i \$0;
+#X obj 257 92 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 633 31 inlet;
+#X obj 253 61 inlet;
+#X msg 50 297 0.25;
+#X msg 666 120 \; grain_pitch_rcv 0.25 \; grain_size_rcv 0.5 \; sample_offset_rcv
+0.5 \; offset_random_rcv 0.02 \; random_pitch_rcv 0 \; random_panning_rcv
+0.2 \; numgrains_rcv bang \; global_pan_rcv 0.5 \; grain_env_rcv 1
+\; make_tables_rcv bang \; grains_playing_rcv 1 \; autoplay_speed_rcv
+1 \; autoplay_reverse_rcv 0 \; freeze_rcv 0 \; autoplay_on_off_rcv
+0 \; on_off_rcv 1 \; attack_rcv 0.02 \; release_rcv 0.02 \; volume_rcv
+1 \; num_channels_rcv 2 \;;
+#X msg 262 159 \; sample_offset_rcv send sample_offset \; rec_location_rcv
+send rec_location \; record_rcv send record \; offset_random_rcv send
+offset_random \; input_monitor_rcv send input_monitor \; grain_pitch_rcv
+send grain_pitch \; random_pitch_rcv send random_pitch \; reverse_rcv
+send reverse \; reset_pitch_rcv send reset_pitch \; grain_size_rcv
+send grain_size \; grain_env_rcv send grain_env \; grains_playing_rcv
+send grains_playing \; global_pan_rcv send global_pan \; random_panning_rcv
+send random_panning \; attack_rcv send attack \; release_rcv send release
+\; autoplay_on_off_rcv send autoplay_on_off \; autoplay_speed_rcv send
+autoplay_speed \; autoplay_reverse_rcv send autoplay_reverse \; freeze_rcv
+send freeze \; on_off_rcv send on_off \; defaults_rcv send defaults
+\; volume_rcv send volume \; select_sound_rcv send select_sound \;
+;
+#X connect 1 0 9 0;
+#X connect 5 0 11 0;
+#X connect 6 0 5 0;
+#X connect 7 0 4 0;
+#X connect 8 0 6 0;
+#X connect 9 0 2 0;
+#X restore 102 364 pd settings;
+#N canvas 36 75 1369 803 autoplay 0;
+#X floatatom 279 367 5 0 0 0 - - -;
+#X obj 300 442 phasor~ 0.1;
+#X obj 300 464 ys.snapshot 2;
+#X obj 364 505 spigot;
+#X obj 517 346 sel 1;
+#X obj 376 371 f;
+#X obj 302 565 spigot;
+#X obj 163 399 - 1;
+#X obj 163 421 abs;
+#X obj 162 446 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 222 375 sel 0;
+#X obj 233 415 f;
+#X floatatom 94 71 5 0 0 0 - - -;
+#X obj 94 90 / 44.1;
+#X floatatom 94 112 5 0 0 0 - - -;
+#X floatatom 94 153 15 0 0 0 - - -;
+#X obj 94 131 expr 1000/$f1;
+#X obj 181 256 *;
+#X obj 250 331 * 1;
+#X obj 268 286 t b b;
+#X obj 267 259 sel 0 1;
+#X msg 301 313 1;
+#X obj 325 285 t b b;
+#X msg 358 312 -1;
+#X obj 474 312 t f f;
+#X obj 518 389 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 388 393 5 0 0 0 - - -;
+#X obj 110 201 t b f;
+#X obj 300 593 s sample_offset_rcv;
+#X obj 403 159 r sample_offset;
+#X obj 511 203 r autoplay_on_off;
+#X obj 201 167 r autoplay_speed;
+#X obj 267 238 r autoplay_reverse;
+#X obj 167 342 r freeze;
+#X obj 94 49 r samplelength;
+#X floatatom 493 489 5 0 0 0 - - -;
+#X floatatom 364 526 5 0 0 0 - - -;
+#X obj 189 203 * 4;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 35 0;
+#X connect 3 0 6 0;
+#X connect 3 0 36 0;
+#X connect 4 0 5 0;
+#X connect 4 0 25 0;
+#X connect 5 0 1 1;
+#X connect 5 0 26 0;
+#X connect 6 0 11 1;
+#X connect 6 0 28 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 6 1;
+#X connect 10 0 11 0;
+#X connect 11 0 1 1;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 16 0;
+#X connect 15 0 27 0;
+#X connect 16 0 15 0;
+#X connect 17 0 18 0;
+#X connect 18 0 0 0;
+#X connect 19 0 18 0;
+#X connect 19 1 21 0;
+#X connect 20 0 19 0;
+#X connect 20 1 22 0;
+#X connect 21 0 18 1;
+#X connect 22 0 18 0;
+#X connect 22 1 23 0;
+#X connect 23 0 18 1;
+#X connect 24 0 3 1;
+#X connect 24 1 4 0;
+#X connect 27 0 17 0;
+#X connect 27 1 17 1;
+#X connect 29 0 5 1;
+#X connect 30 0 24 0;
+#X connect 31 0 37 0;
+#X connect 32 0 20 0;
+#X connect 33 0 7 0;
+#X connect 33 0 10 0;
+#X connect 34 0 12 0;
+#X connect 37 0 17 0;
+#X restore 86 272 pd autoplay;
+#X obj 119 335 t b b b;
+#X floatatom 503 193 5 0 0 0 - - -;
+#X text 441 195 channels;
+#X obj 407 124 loadbang;
+#X msg 368 146 16;
+#X obj 501 168 r num_channels_rcv;
+#X obj 510 255 s num_channels;
+#X obj 338 201 s numgrains;
+#X msg 407 147 32;
+#X text 93 223 number of instances of y_grain_stereo should equal the
+numgrains (I recognise this is silly);
+#X msg 337 146 10;
+#X text 182 91 (some vestigial things in here to clean up);
+#X obj 778 205 metro 1000;
+#X obj 837 93 r grain_density;
+#X msg 92 168 next 1;
+#X obj 93 147 r mastergrainbang;
+#X obj 838 150 * 1000;
+#X obj 778 232 random 100;
+#X floatatom 778 253 5 0 0 0 - - -;
+#X obj 783 286 < 100;
+#X obj 783 314 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 783 334 sel 1;
+#X obj 785 360 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 851 234 r grainplay_chance;
+#X obj 851 261 * 100;
+#X obj 1029 210 * 44100;
+#X floatatom 1030 240 15 0 0 0 - - -;
+#X obj 1024 140 r grain_size;
+#X obj 1029 264 s grainsize;
+#X floatatom 839 174 5 0 0 0 - - -;
+#X obj 1029 172 + 0.01;
+#X obj 778 123 r on_off;
+#X obj 784 163 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 778 181 change;
+#X obj 90 190 clone y_grain_stereo 32;
+#X text 182 364 <-- is this old?!;
+#X obj 431 286 catch~ grainoutL;
+#X obj 543 290 catch~ grainoutR;
+#X obj 482 380 dac~;
+#X obj 441 344 *~;
+#X obj 534 344 *~;
+#X obj 555 317 r volume;
+#X obj 431 455 rev2~ 105 100 75 20;
+#X obj 534 491 dac~;
+#X obj 570 454 rev2~ 105 100 75 20;
+#X obj 437 430 *~;
+#X obj 576 427 *~;
+#X msg 581 371 \$1 10;
+#X obj 581 394 line~;
+#X obj 584 348 r \$0-reverb_on;
+#X obj 678 347 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 791 382 s mastergrainbang;
+#X obj 846 330 r play_one_grain;
+#X connect 3 0 1 1;
+#X connect 3 1 1 0;
+#X connect 4 0 9 0;
+#X connect 6 0 11 0;
+#X connect 7 0 10 0;
+#X connect 8 0 4 0;
+#X connect 11 0 10 0;
+#X connect 13 0 10 0;
+#X connect 15 0 20 0;
+#X connect 16 0 19 0;
+#X connect 17 0 37 0;
+#X connect 18 0 17 0;
+#X connect 19 0 32 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X connect 25 0 54 0;
+#X connect 26 0 27 0;
+#X connect 27 0 22 1;
+#X connect 28 0 29 0;
+#X connect 29 0 31 0;
+#X connect 30 0 33 0;
+#X connect 32 0 15 1;
+#X connect 33 0 28 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 15 0;
+#X connect 39 0 42 0;
+#X connect 40 0 43 0;
+#X connect 42 0 48 0;
+#X connect 42 0 41 0;
+#X connect 43 0 41 1;
+#X connect 43 0 49 0;
+#X connect 44 0 42 1;
+#X connect 44 0 43 1;
+#X connect 45 0 46 0;
+#X connect 47 0 46 1;
+#X connect 48 0 45 0;
+#X connect 49 0 47 0;
+#X connect 50 0 51 0;
+#X connect 51 0 48 1;
+#X connect 51 0 49 1;
+#X connect 52 0 50 0;
+#X connect 53 0 50 0;
+#X connect 55 0 25 0;
+#X coords 0 537 1 536 400 600 0;

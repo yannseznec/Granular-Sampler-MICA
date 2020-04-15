@@ -1,0 +1,19 @@
+#N canvas 395 308 450 300 10;
+#X obj 123 126 snapshot~;
+#X obj 214 67 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 214 87 metro 10;
+#X obj 213 19 loadbang;
+#X floatatom 123 148 5 0 0 0 - - -;
+#X obj 122 258 outlet;
+#X obj 119 82 inlet~;
+#X obj 278 55 i \$1;
+#X obj 246 163 r snapshot_on;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X connect 3 0 7 0;
+#X connect 4 0 5 0;
+#X connect 6 0 0 0;
+#X connect 7 0 2 1;
