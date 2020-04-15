@@ -55,14 +55,14 @@
 #X connect 23 0 19 0;
 #X connect 24 0 26 0;
 #X connect 24 0 27 0;
-#X restore 23 693 pd loadsound;
+#X restore 22 607 pd loadsound;
 #N canvas 0 22 450 278 (subpatch) 0;
-#X array poly_grain-R 782595 float 2;
-#X coords 0 1 782595 -1 200 70 1 0 0;
+#X array poly_grain-R 260190 float 2;
+#X coords 0 1 260190 -1 200 70 1 0 0;
 #X restore 20 132 graph;
 #N canvas 0 23 450 278 (subpatch) 0;
-#X array poly_grain-L 782595 float 2;
-#X coords 0 1 782595 -1 200 70 1 0 0;
+#X array poly_grain-L 260190 float 2;
+#X coords 0 1 260190 -1 200 70 1 0 0;
 #X restore 20 62 graph;
 #N canvas 211 60 1194 614 windows 0;
 #N canvas 0 22 450 300 (subpatch) 0;
@@ -199,25 +199,25 @@
 #X msg 723 283 read -resize sounds/hanning.wav hann;
 #X msg 733 320 read -resize sounds/hanning.wav crown;
 #X obj 757 474 hsl 195 8 0 1 0 0 empty 0-loc empty -2 -8 0 10 -262144
--1 -1 4960 1;
+-1 -1 385 1;
 #X obj 757 482 hsl 195 8 0 1 0 0 empty 1-loc empty -2 -8 0 10 -262144
--1 -1 4947 1;
+-1 -1 568 1;
 #X obj 757 490 hsl 195 8 0 1 0 0 empty 2-loc empty -2 -8 0 10 -262144
--1 -1 5043 1;
+-1 -1 382 1;
 #X obj 757 498 hsl 195 8 0 1 0 0 empty 3-loc empty -2 -8 0 10 -262144
--1 -1 4901 1;
+-1 -1 443 1;
 #X obj 757 506 hsl 195 8 0 1 0 0 empty 4-loc empty -2 -8 0 10 -262144
--1 -1 5053 1;
+-1 -1 320 1;
 #X obj 757 514 hsl 195 8 0 1 0 0 empty 5-loc empty -2 -8 0 10 -262144
--1 -1 4824 1;
+-1 -1 493 1;
 #X obj 757 522 hsl 195 8 0 1 0 0 empty 6-loc empty -2 -8 0 10 -262144
--1 -1 4950 1;
+-1 -1 485 1;
 #X obj 757 530 hsl 195 8 0 1 0 0 empty 7-loc empty -2 -8 0 10 -262144
--1 -1 5004 1;
+-1 -1 534 1;
 #X obj 757 538 hsl 195 8 0 1 0 0 empty 8-loc empty -2 -8 0 10 -262144
--1 -1 4948 1;
+-1 -1 325 1;
 #X obj 757 546 hsl 195 8 0 1 0 0 empty 9-loc empty -2 -8 0 10 -262144
--1 -1 4793 1;
+-1 -1 346 1;
 #X text 767 453 grain location visualizer;
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
@@ -246,28 +246,28 @@
 #X connect 38 0 40 0;
 #X connect 43 0 28 0;
 #X connect 44 0 28 0;
-#X restore 23 715 pd windows;
+#X restore 22 629 pd windows;
 #X obj 23 217 hsl 195 15 0 1 0 0 sample_offset sample_offset_rcv sample_offset
--2 -8 0 10 -262144 -1 -1 4900 1;
+-2 -8 0 10 -262144 -1 -1 500 1;
 #X obj 23 281 hsl 128 15 0 1 0 0 offset_random offset_random_rcv offset_random
 -2 -8 0 10 -262144 -1 -1 254 1;
-#X obj 22 511 hsl 128 15 0.001 1 0 0 grain_size grain_size_rcv grain_size
+#X obj 24 417 hsl 128 15 0.001 1 0 0 grain_size grain_size_rcv grain_size
 -2 -8 0 10 -262144 -1 -1 6344 1;
-#X obj 23 475 hsl 128 15 0 1 0 0 random_pitch random_pitch_rcv random_pitch
+#X obj 24 380 hsl 128 15 0 1 0 0 random_pitch random_pitch_rcv random_pitch
 -2 -8 0 10 -262144 -1 -1 0 1;
-#X obj 175 572 hsl 128 15 0 1 0 0 random_panning random_panning_rcv
+#X obj 213 487 hsl 128 15 0 1 0 0 random_panning random_panning_rcv
 random_panning -2 -8 0 10 -262144 -1 -1 7620 1;
-#X obj 176 540 hsl 128 15 0 1 0 0 global_pan global_pan_rcv global_pan
+#X obj 213 455 hsl 128 15 0 1 0 0 global_pan global_pan_rcv global_pan
 -2 -8 0 10 -262144 -1 -1 6350 1;
-#X obj 21 549 hsl 128 15 0.002 1 0 0 grain_density grain_density_rcv
+#X obj 24 454 hsl 128 15 0.002 1 0 0 grain_density grain_density_rcv
 grain_density -2 -8 0 10 -262144 -1 -1 1247 1;
-#X obj 22 586 hsl 128 15 0 1 0 0 grainplay_chance grainplay_chance_rcv
+#X obj 24 491 hsl 128 15 0 1 0 0 grainplay_chance grainplay_chance_rcv
 grainplay_chance -2 -8 0 10 -262144 -1 -1 12700 1;
-#X obj 20 396 tgl 15 0 reverse reverse_rcv reverse 17 7 0 10 -262144
+#X obj 21 301 tgl 15 0 reverse reverse_rcv reverse 17 7 0 10 -262144
 -1 -1 0 1;
 #X obj 24 247 hsl 195 15 0 1 0 0 rec_location rec_location_rcv rec_location
 -2 -8 0 10 -262144 -258113 -1 0 1;
-#X obj 234 382 vsl 15 128 0.01 1.4 1 0 volume volume_rcv volume 0 -9
+#X obj 259 297 vsl 15 128 0.01 1.4 1 0 volume volume_rcv volume 0 -9
 0 10 -262144 -1 -1 11835 1;
 #N canvas 595 143 1036 855 sampling_stereo 0;
 #X msg 645 141 stop, f 7;
@@ -508,17 +508,17 @@ grainplay_chance -2 -8 0 10 -262144 -1 -1 12700 1;
 #X connect 69 0 9 0;
 #X connect 69 1 29 0;
 #X connect 69 1 30 0;
-#X restore 23 673 pd sampling_stereo;
-#X obj 23 428 hsl 128 15 0 1 0 0 grain_pitch grain_pitch_rcv grain_pitch
+#X restore 22 587 pd sampling_stereo;
+#X obj 24 333 hsl 128 15 0 1 0 0 grain_pitch grain_pitch_rcv grain_pitch
 -2 -8 0 10 -262144 -1 -1 3175 1;
-#X obj 23 651 ys.granular_stereo 1;
+#X obj 22 565 ys.granular_stereo 1;
 #X obj 241 62 tgl 30 0 on_off on_off_rcv on_off 30 7 0 10 -262144 -1
 -1 0 1;
 #X obj 241 124 tgl 15 0 record record_rcv record 17 7 0 10 -262144
 -1 -1 0 1;
 #X obj 241 104 tgl 15 0 input_monitor input_monitor_rcv input_monitor
 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 82 397 tgl 15 0 reverse_random reverse_random_rcv reverse_random
+#X obj 83 302 tgl 15 0 reverse_random reverse_random_rcv reverse_random
 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 241 164 vradio 15 1 0 3 stereoms stereoms_rcv empty 0 -8 0 10
 -262144 -1 -1 1;
@@ -526,10 +526,10 @@ grainplay_chance -2 -8 0 10 -262144 -1 -1 12700 1;
 #X text 257 178 mid/side;
 #X text 258 192 mono;
 #X obj 31 22 hradio 15 1 0 13 select_sound select_sound_rcv select_sound
-0 -8 0 10 -262144 -1 -1 4;
-#X obj 23 632 bng 15 250 50 0 midi-properties midi-properties_rcv midi-properties
+0 -8 0 10 -262144 -1 -1 2;
+#X obj 22 546 bng 15 250 50 0 midi-properties midi-properties_rcv midi-properties
 17 7 0 10 -262144 -1 -1;
-#X obj 23 614 bng 15 250 50 0 audio-properties audio-properties_rcv
+#X obj 22 528 bng 15 250 50 0 audio-properties audio-properties_rcv
 audio-properties 17 7 0 10 -262144 -1 -1;
 #N canvas 120 227 548 580 settings 0;
 #X obj 234 58 inlet;
@@ -566,20 +566,27 @@ grain_density_rcv 0.1 \; grainplay_chance_rcv 1 \; sample_seconds_rcv
 #X connect 12 0 10 0;
 #X connect 13 0 12 0;
 #X connect 14 0 11 0;
-#X restore 23 737 pd settings;
+#X restore 22 651 pd settings;
 #X floatatom 241 143 5 0 0 1 sample_seconds sample_seconds_rcv sample_seconds
 ;
-#X obj 20 443 bng 15 250 50 0 reset_pitch reset_pitch_rcv reset_pitch
+#X obj 21 348 bng 15 250 50 0 reset_pitch reset_pitch_rcv reset_pitch
 17 7 0 10 -262144 -1 -1;
 #X obj 242 227 bng 15 250 50 0 play_one_grain play_one_grain_rcv play_one_grain
 17 7 0 10 -262144 -1 -1;
-#X obj 22 334 hsl 128 15 0 1 0 0 autoplay_speed autoplay_speed_rcv
+#X obj 425 97 hsl 128 15 0 1 0 0 autoplay_speed autoplay_speed_rcv
 autoplay_speed -2 -8 0 10 -262144 -1 -1 3175 1;
-#X obj 137 302 tgl 15 0 freeze freeze_rcv freeze 17 7 0 10 -262144
--1 -1 0 1;
-#X obj 21 300 tgl 15 0 autoplay_on_off autoplay_on_off_rcv autoplay_on_off
+#X obj 540 65 tgl 15 0 freeze freeze_rcv freeze 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 424 63 tgl 15 0 autoplay_on_off autoplay_on_off_rcv autoplay_on_off
 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 21 357 tgl 15 0 autoplay_reverse autoplay_reverse_rcv autoplay_reverse
+#X obj 424 120 tgl 15 0 autoplay_reverse autoplay_reverse_rcv autoplay_reverse
 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 236 21 bng 15 250 50 0 choose_sound choose_sound_rcv choose_sound
 17 7 0 10 -262144 -1 -1;
+#X text 408 185 Step 1: select a sound. use square buttons or click
+bang to pick a wav/aiff file;
+#X text 406 222 [first square is a blank sound for sampling];
+#X text 409 252 Step 2: Click "on_off" to listen;
+#X text 412 332 use "sample_offset" to scrub through the sound;
+#X text 410 426 otherwise \, explore the settings.;
+#X text 20 712 by yann seznec // yannseznec.com;
