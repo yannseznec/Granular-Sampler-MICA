@@ -1,4 +1,4 @@
-#N canvas 104 95 937 545 10;
+#N canvas 726 95 937 545 10;
 #X obj 310 283 bng 15 250 50 0 defaults defaults_rcv defaults 17 7
 0 10 -262144 -1 -1;
 #N canvas 36 75 1369 803 autoplay 0;
@@ -121,7 +121,7 @@ numgrains (I recognise this is silly);
 #X floatatom 88 189 5 0 0 0 - - -;
 #X obj 241 354 + 0.01;
 #X obj 27 138 r on_off;
-#X obj 33 178 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 28 166 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 27 196 change;
 #X obj 31 69 clone y_grain_stereo 32;
