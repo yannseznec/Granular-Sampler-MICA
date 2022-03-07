@@ -1,8 +1,6 @@
-#N canvas 726 95 937 545 10;
-#X obj 310 283 bng 15 250 50 0 defaults defaults_rcv defaults 17 7
-0 10 -262144 -1 -1;
-#N canvas 36 75 1369 803 autoplay 0;
-#X floatatom 279 367 5 0 0 0 - - -;
+#N canvas 449 95 967 545 10;
+#N canvas 32 69 1369 803 autoplay 0;
+#X floatatom 279 367 5 0 0 0 - - - 0;
 #X obj 300 442 phasor~ 0.1;
 #X obj 300 464 ys.snapshot 2;
 #X obj 364 505 spigot;
@@ -11,14 +9,14 @@
 #X obj 302 565 spigot;
 #X obj 163 399 - 1;
 #X obj 163 421 abs;
-#X obj 162 446 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
+#X obj 162 446 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X obj 222 375 sel 0;
 #X obj 233 415 f;
-#X floatatom 94 71 5 0 0 0 - - -;
+#X floatatom 94 71 5 0 0 0 - - - 0;
 #X obj 94 90 / 44.1;
-#X floatatom 94 112 5 0 0 0 - - -;
-#X floatatom 94 153 15 0 0 0 - - -;
+#X floatatom 94 112 5 0 0 0 - - - 0;
+#X floatatom 94 153 15 0 0 0 - - - 0;
 #X obj 94 131 expr 1000/$f1;
 #X obj 181 256 *;
 #X obj 250 331 * 1;
@@ -28,9 +26,9 @@
 #X obj 325 285 t b b;
 #X msg 358 312 -1;
 #X obj 474 312 t f f;
-#X obj 518 389 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X floatatom 388 393 5 0 0 0 - - -;
+#X obj 518 389 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 388 393 5 0 0 0 - - - 0;
 #X obj 110 201 t b f;
 #X obj 300 593 s sample_offset_rcv;
 #X obj 403 159 r sample_offset;
@@ -39,8 +37,8 @@
 #X obj 267 238 r autoplay_reverse;
 #X obj 167 342 r freeze;
 #X obj 94 49 r samplelength;
-#X floatatom 493 489 5 0 0 0 - - -;
-#X floatatom 364 526 5 0 0 0 - - -;
+#X floatatom 493 489 5 0 0 0 - - - 0;
+#X floatatom 364 526 5 0 0 0 - - - 0;
 #X obj 189 203 * 4;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
@@ -87,7 +85,7 @@
 #X connect 34 0 12 0;
 #X connect 37 0 17 0;
 #X restore 233 282 pd autoplay;
-#X floatatom 76 486 5 0 0 0 - - -;
+#X floatatom 76 486 5 0 0 0 - - - 0;
 #X text 14 488 channels;
 #X obj 596 17 loadbang;
 #X msg 557 39 16;
@@ -95,8 +93,6 @@
 #X obj 83 548 s num_channels;
 #X obj 527 94 s numgrains;
 #X msg 596 40 32;
-#X text 179 39 number of instances of y_grain_stereo should equal the
-numgrains (I recognise this is silly);
 #X msg 526 39 10;
 #X text 238 92 (some vestigial things in here to clean up);
 #X obj 27 220 metro 1000;
@@ -105,24 +101,24 @@ numgrains (I recognise this is silly);
 #X obj 34 26 r mastergrainbang;
 #X obj 87 165 * 1000;
 #X obj 27 247 random 100;
-#X floatatom 27 268 5 0 0 0 - - -;
+#X floatatom 27 268 5 0 0 0 - - - 0;
 #X obj 32 301 < 100;
-#X obj 32 329 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
+#X obj 32 329 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X obj 32 349 sel 1;
-#X obj 34 375 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 34 375 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 100 249 r grainplay_chance;
 #X obj 100 276 * 100;
 #X obj 241 392 * 44100;
-#X floatatom 242 422 15 0 0 0 - - -;
+#X floatatom 242 422 15 0 0 0 - - - 0;
 #X obj 236 322 r grain_size;
 #X obj 241 446 s grainsize;
-#X floatatom 88 189 5 0 0 0 - - -;
+#X floatatom 88 189 5 0 0 0 - - - 0;
 #X obj 241 354 + 0.01;
 #X obj 27 138 r on_off;
-#X obj 28 166 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
+#X obj 28 166 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X obj 27 196 change;
 #X obj 31 69 clone y_grain_stereo 32;
 #X obj 385 161 catch~ grainoutL;
@@ -138,54 +134,61 @@ numgrains (I recognise this is silly);
 #X obj 530 302 *~;
 #X msg 535 246 \$1 10;
 #X obj 535 269 line~;
-#X obj 632 222 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 632 222 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X obj 40 397 s mastergrainbang;
 #X obj 95 345 r play_one_grain;
 #X obj 537 223 r reverb_on;
-#X connect 2 0 7 0;
-#X connect 4 0 9 0;
-#X connect 5 0 8 0;
-#X connect 6 0 2 0;
-#X connect 9 0 8 0;
-#X connect 11 0 8 0;
-#X connect 13 0 18 0;
-#X connect 14 0 17 0;
-#X connect 15 0 35 0;
-#X connect 16 0 15 0;
-#X connect 17 0 30 0;
+#X text 179 39 number of instances of y_grain_stereo should equal the
+numgrains (I recognise this is silly \, don't blame me);
+#X obj 720 229 r reset_pitch;
+#X msg 722 272 0.25;
+#X obj 722 293 s grain_pitch_rcv;
+#X connect 1 0 6 0;
+#X connect 3 0 8 0;
+#X connect 4 0 7 0;
+#X connect 5 0 1 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 0;
+#X connect 11 0 16 0;
+#X connect 12 0 15 0;
+#X connect 13 0 33 0;
+#X connect 14 0 13 0;
+#X connect 15 0 28 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
 #X connect 18 0 19 0;
 #X connect 19 0 20 0;
 #X connect 20 0 21 0;
-#X connect 21 0 22 0;
+#X connect 21 0 48 0;
 #X connect 22 0 23 0;
-#X connect 23 0 50 0;
+#X connect 23 0 18 1;
 #X connect 24 0 25 0;
-#X connect 25 0 20 1;
-#X connect 26 0 27 0;
-#X connect 27 0 29 0;
-#X connect 28 0 31 0;
-#X connect 30 0 13 1;
-#X connect 31 0 26 0;
-#X connect 32 0 33 0;
-#X connect 33 0 34 0;
-#X connect 34 0 13 0;
-#X connect 36 0 39 0;
-#X connect 37 0 40 0;
-#X connect 39 0 45 0;
-#X connect 39 0 38 0;
-#X connect 40 0 38 1;
-#X connect 40 0 46 0;
-#X connect 41 0 39 1;
-#X connect 41 0 40 1;
-#X connect 42 0 43 0;
-#X connect 44 0 43 1;
-#X connect 45 0 42 0;
-#X connect 46 0 44 0;
-#X connect 47 0 48 0;
-#X connect 48 0 45 1;
-#X connect 48 0 46 1;
-#X connect 49 0 47 0;
-#X connect 51 0 23 0;
-#X connect 52 0 47 0;
+#X connect 25 0 27 0;
+#X connect 26 0 29 0;
+#X connect 28 0 11 1;
+#X connect 29 0 24 0;
+#X connect 30 0 31 0;
+#X connect 31 0 32 0;
+#X connect 32 0 11 0;
+#X connect 34 0 37 0;
+#X connect 35 0 38 0;
+#X connect 37 0 43 0;
+#X connect 37 0 36 0;
+#X connect 38 0 36 1;
+#X connect 38 0 44 0;
+#X connect 39 0 37 1;
+#X connect 39 0 38 1;
+#X connect 40 0 41 0;
+#X connect 42 0 41 1;
+#X connect 43 0 40 0;
+#X connect 44 0 42 0;
+#X connect 45 0 46 0;
+#X connect 46 0 43 1;
+#X connect 46 0 44 1;
+#X connect 47 0 45 0;
+#X connect 49 0 21 0;
+#X connect 50 0 45 0;
+#X connect 52 0 53 0;
+#X connect 53 0 54 0;
 #X coords 0 545 1 544 400 600 0;
